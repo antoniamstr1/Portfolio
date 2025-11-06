@@ -237,30 +237,32 @@ const features = [
 
     <div class="buttons-container">
       <Button
+        label="Github Repo"
+        icon="pi pi-github"
         as="a"
-        label="githubRepo"
-        href="https://vuejs.org/"
+        href="https://github.com/antoniamstr1/Velvet"
         target="_blank"
-        rel="noopener"
-      >Github Repo</Button>
+        rel="noopener noreferrer"
+      />
+
       <Button
+        label="Dashboard"
+        icon="pi pi-external-link"
         as="a"
-        label="dashboard"
-        href="https://vuejs.org/"
+        href="https://velvet-dashboard.onrender.com/"
         target="_blank"
-        rel="noopener"
-      >Dashboard</Button>
+        rel="noopener noreferrer"
+      />
     </div>
   </div>
 </template>
 
 <style scoped>
-
 .buttons-container {
   position: absolute;
   top: 30vh;
   left: 3em;
-  display:flex;
+  display: flex;
   flex-direction: column;
   gap: 5vh;
 }
