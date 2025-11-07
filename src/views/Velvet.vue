@@ -184,6 +184,7 @@ const features = [
   font-size: 5rem;
   font-weight: bold;
   transform: rotate(180deg);
+  color: rgb(50, 11, 68);
 
   /* positioning to the left */
   position: absolute;
