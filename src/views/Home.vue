@@ -73,4 +73,8 @@ const carouselProjectsData = [
   height: 30vh;
   margin: 5px;
 }
+
+.clickable-card:hover{
+  background-color: rgb(248, 248, 248);
+}
 </style>
