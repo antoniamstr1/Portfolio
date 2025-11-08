@@ -8,12 +8,12 @@ import Card from "primevue/card";
 import Button from "primevue/button";
 import TechStackPanel from "../components/TechStackPanel.vue";
 import Fieldset from "primevue/fieldset";
-import { useRouter } from 'vue-router';
+import { useRouter } from "vue-router";
 const router = useRouter();
 const openPDF = (type) => {
-  if(type === "mdu")
-  window.open('/pdfs/mdu.pdf', '_blank');
-  else window.open('/pdfs/letter.pdf', '_blank');
+  if (type === "mdu") window.open("/pdfs/mdu.pdf", "_blank");
+  if (type === "cv") window.open("/pdfs/cv.pdf", "_blank");
+  if (type === "cv") window.open("/pdfs/letter.pdf", "_blank");
 };
 </script>
 
@@ -43,7 +43,7 @@ const openPDF = (type) => {
                 </p>
               </template>
             </Card>
-            <Button style="margin-top: 5vh">CV</Button>
+            <Button style="margin-top: 5vh" @click="openPDF('cv')">CV</Button>
           </p>
         </TabPanel>
         <TabPanel value="1">
@@ -60,7 +60,9 @@ const openPDF = (type) => {
                 >Vue, TypeScript, Directus:</b
               >
               Assisted in building and maintaining a content management system
-              (CMS). <br /><br /><Button @click="openPDF('letter')">letter of recommendation</Button>
+              (CMS). <br /><br /><Button @click="openPDF('letter')"
+                >letter of recommendation</Button
+              >
             </p>
           </Fieldset>
         </TabPanel>
@@ -125,13 +127,10 @@ const openPDF = (type) => {
               application using React and Node.js that integrates a LLM).
             </p>
             <div class="buttons-container">
-              <Button
-                @click="openPDF('letter')"
+              <Button @click="openPDF('letter')"
                 >Course Certificate from MDU</Button
               >
-              <Button
-                label="Open PDF"
-                @click="() => router.push('/FeelGPT')"
+              <Button label="Open PDF" @click="() => router.push('/FeelGPT')"
                 >FeelGPT</Button
               >
             </div>
