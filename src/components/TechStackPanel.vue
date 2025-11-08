@@ -8,6 +8,11 @@ const props = defineProps({
     required: true,
     default: [],
   },
+  layout: {
+    type: String,
+    required: false,
+    default: "column",
+  },
 });
 
 const techList = [
@@ -15,6 +20,11 @@ const techList = [
     name: "js",
     link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     icon: "/images/techstack-icons/js.png",
+  },
+    {
+    name: "ts",
+    link: "https://www.python.org/",
+    icon: "/images/techstack-icons/ts.png",
   },
   {
     name: "node",
@@ -27,14 +37,19 @@ const techList = [
     icon: "/images/techstack-icons/express.png",
   },
   {
-    name: "supabase",
-    link: "https://supabase.com/",
-    icon: "/images/techstack-icons/supabase.png",
-  },
-  {
     name: "react",
     link: "https://react.dev/",
     icon: "/images/techstack-icons/react.png",
+  },
+      {
+    name: "vue",
+    link: "https://vuejs.org/",
+    icon: "/images/techstack-icons/vue.png",
+  },
+    {
+    name: "primevue",
+    link: "https://primevue.org/",
+    icon: "/images/techstack-icons/primevue.png",
   },
   {
     name: "materialui",
@@ -52,6 +67,41 @@ const techList = [
     icon: "/images/techstack-icons/vitest.png",
   },
   {
+    name: "postgres",
+    link: "https://www.postgresql.org/download/",
+    icon: "/images/techstack-icons/postgres.png",
+  },
+    {
+    name: "supabase",
+    link: "https://supabase.com/",
+    icon: "/images/techstack-icons/supabase.png",
+  },
+  {
+    name: "mongodb",
+    link: "https://www.mongodb.com/",
+    icon: "/images/techstack-icons/mongodb.png",
+  },
+  {
+    name: "c",
+    link: "",
+    icon: "/images/techstack-icons/c.png",
+  },
+  {
+    name: "c++",
+    link: "",
+    icon: "/images/techstack-icons/c++.webp",
+  },
+  {
+    name: "python",
+    link: "https://www.python.org/",
+    icon: "/images/techstack-icons/python.png",
+  },
+  {
+    name: "git",
+    link: "https://git-scm.com/",
+    icon: "/images/techstack-icons/git.png",
+  },
+    {
     name: "docker",
     link: "http://docker.com/",
     icon: "/images/techstack-icons/docker.png",
@@ -61,26 +111,28 @@ const techList = [
     link: "https://render.com/",
     icon: "/images/techstack-icons/render.png",
   },
+
 ];
 
 const displayedTechList = computed(() => {
   return techList.filter((el) => props.data.includes(el.name));
 });
+
 </script>
 
 <template>
   <Card class="techstack-panel">
     <template #title></template>
     <template #content>
-      <div class="techstack">
+      <div :class="['techstack', layout]">
         <a
           v-for="tech in displayedTechList"
           :key="tech.name"
-          :href="tech.link"
+          href="/images/techstack-icons/vitest.png"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img :src="tech.icon" :alt="tech.name" class="techstack-image" />
+          <img :src="tech.icon" :alt="tech.name" class="techstack-image" /> 
         </a>
       </div>
     </template>
@@ -88,9 +140,15 @@ const displayedTechList = computed(() => {
 </template>
 
 <style scoped>
-.techstack {
+.techstack.column {
   display: flex;
   flex-direction: column;
+  gap: 2vh;
+  align-items: center;
+}
+.techstack.row {
+  display: flex;
+  flex-direction: row;
   gap: 2vh;
   align-items: center;
 }

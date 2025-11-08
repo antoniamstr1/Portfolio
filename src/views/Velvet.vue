@@ -74,8 +74,6 @@ const features = [
 ];
 </script>
 
-<!--     title: "What exactly is it?",
-    text: "It is a Chrome extension that allows users to easily store their notes, thoughts, and ideas directly in the browser..." -->
 <template>
   <div class="velvet-container">
     <h1 class="vertical-title">Velvet</h1>
@@ -83,7 +81,7 @@ const features = [
     <Panel class="photo-panel" style="border: none">
       <div>
         <Card :style="{ marginBottom: '20px' }">
-          <template #title>What exactly is it?</template>
+          <template #title>The Velvet Project</template>
           <template #content>
             <p class="m-0">
               It is a Chrome extension that allows users to easily store their
@@ -120,20 +118,7 @@ const features = [
       </div>
     </Panel>
     <TechStackPanel
-      v-bind="{
-        data: [
-          'js',
-          'node',
-          'express',
-          'supabase',
-          'react',
-          'materialui',
-          'vite',
-          'vitest',
-          'docker',
-          'render',
-        ],
-      }"
+        :data="['js','node','express','react','vite','vitest', 'docker','render']"
     />
     
 
@@ -234,25 +219,25 @@ const features = [
   height: auto;
   transition: opacity 0.3s ease;
   object-fit: cover;
-  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
 }
 
 .card-velvet {
   position: absolute;
-  background-color: rgb(248, 248, 248);
+  background-color: rgb(249, 249, 249);
   z-index: 1;
 }
 /* custom design classes for each element */
 /* start */
 .velvet-start-image {
   position: absolute;
-  right: 0;
+  right: 5vw;
   top: 0;
-  width: 60%;
+  width: 50%;
   height: auto;
 }
 .velvet-start-text {
-  left: 0;
+  left: 3vh;
   top: 40%;
   width: 20vw;
 }
@@ -260,10 +245,10 @@ const features = [
 .velvet-writings-image {
   width: 100%;
   height: auto;
-  top: 10%;
+  top: 20%;
 }
 .velvet-writings-text {
-  left: 10%;
+  left: 15%;
   top: -5%;
   width: 20vw;
 }
@@ -271,13 +256,13 @@ const features = [
 .velvet-notes-image {
   position: absolute;
   right: 0;
-  top: 0;
+  top: -5%;
   width: 80%;
   height: auto;
 }
 .velvet-notes-text {
   left: 5%;
-  top: 35%;
+  top: 25%;
   width: 20vw;
 }
 /* highlights */
@@ -288,8 +273,8 @@ const features = [
   height: auto;
 }
 .velvet-highlights-text {
-  top: 1vh;
   width: 100%;
+  top: 5%;
 }
 /* connections */
 .velvet-connections-image {
@@ -307,27 +292,27 @@ const features = [
 /* ai searh */
 .velvet-ai-search-image {
   position: absolute;
-  top: 40%;
+  top: 60%;
   right: 0;
   width: 90%;
   height: auto;
 }
 .velvet-ai-search-text {
-  top: 0%;
+  top: 30%;
   width: 75%;
   right: 0%;
 }
 /* groups */
 .velvet-groups-image {
   position: absolute;
-  top: 5vh;
-  right: 10vw;
-  width: 15vw;
+  top: 40%;
+  right: 20%;
+  width: 30%;
   height: auto;
   margin-bottom: 20vh;
 }
 .velvet-groups-text {
-  top: 20vh;
+  top: 60%;
   width: 45%;
   left: 10%;
 }
