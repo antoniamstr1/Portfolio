@@ -18,7 +18,7 @@ const openPDF = (type) => {
 </script>
 
 <template>
-  <div class="card">
+  <div class="cv-container">
     <Tabs value="0">
       <TabList>
         <Tab value="0">About me</Tab>
@@ -39,7 +39,8 @@ const openPDF = (type) => {
                 <p class="left">
                   Velika Gorica, Croatia<br />
                   0093145837<br />
-                  mestrovic.antonia@gmail.com
+                  <a href="mailto:mestrovic.antonia@gmail.com">
+                  mestrovic.antonia@gmail.com</a>
                 </p>
               </template>
             </Card>
@@ -143,15 +144,19 @@ const openPDF = (type) => {
               src="/images/languages/english.png"
               alt="English"
             />
-            <p>English C1</p>
+            <p>English</p><p style="color: gray;">(C1)</p>
           </div>
           <div class="left flag-container">
             <img class="flag" src="/images/languages/italy.png" alt="Italian" />
-            <p>Italian B1</p>
+            <p>Italian</p><p style="color: gray;">(B1)</p>
           </div>
           <div class="left flag-container">
             <img class="flag" src="/images/languages/german.png" alt="German" />
-            <p>German B1</p>
+            <p>German</p><p style="color: gray;">(B1)</p>
+          </div>
+          <div class="left flag-container">
+            <img class="flag" src="/images/languages/spain.png" alt="German" />
+            <p>Spanish</p><p style="color: gray;">(beginner)</p>
           </div>
         </TabPanel>
       </TabPanels>
@@ -160,6 +165,12 @@ const openPDF = (type) => {
 </template>
 
 <style scoped>
+.cv-container{
+  position: fixed;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .left {
   text-align: left;
 }
@@ -188,5 +199,10 @@ const openPDF = (type) => {
   width: 3rem;
   height: 2rem;
   margin-right: 1rem;
+}
+@media(max-width: 800px){
+  .cv-container{
+    width: 100vw;
+  }
 }
 </style>

@@ -118,20 +118,27 @@ const features = [
       </div>
     </Panel>
     <TechStackPanel
-        :data="['js','node','express','react','vite','vitest', 'docker','render']"
+      :data="[
+        'js',
+        'node',
+        'express',
+        'react',
+        'vite',
+        'vitest',
+        'docker',
+        'render',
+      ]"
     />
-    
 
-    <div class="buttons-container" >
+    <div class="buttons-container">
       <Button
         label="Github Repo"
         icon="pi pi-github"
         as="a"
         href="https://github.com/antoniamstr1/Velvet"
         target="_blank"
-        :style="{ backgroundColor:  'rgb(50, 11, 68)', border:'none' }"
+        :style="{ backgroundColor: 'rgb(50, 11, 68)', border: 'none' }"
         rel="noopener noreferrer"
-
       ></Button>
 
       <Button
@@ -140,7 +147,7 @@ const features = [
         as="a"
         href="https://velvet-dashboard.onrender.com/"
         target="_blank"
-        :style="{ backgroundColor: 'rgb(50, 11, 68)', border:'none' }"
+        :style="{ backgroundColor: 'rgb(50, 11, 68)', border: 'none' }"
         rel="noopener noreferrer"
       ></Button>
     </div>
@@ -152,10 +159,14 @@ const features = [
   display: flex;
   flex-direction: row;
   margin-top: 5vh;
-
+}
+@media (max-width: 768px) {
+  .velvet-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .buttons-container {
-
   display: flex;
   flex-direction: column;
   gap: 5vh;
@@ -174,28 +185,10 @@ const features = [
   /* positioning to the left */
   position: absolute;
   left: 0;
-  bottom: 10vh; 
+  bottom: 10vh;
 }
 
-@media (max-width: 800px) {
-  .vertical-title {
-    writing-mode: horizontal-tb;
-    text-orientation: mixed;
-    transform: none;
-    font-size: 3rem;
-    position: static;
-    bottom: auto;
-  }
-}
-
-@media (max-width: 800px) {
-  .panel-container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.teckstack{
+.teckstack {
   margin-top: 5vh;
 }
 
@@ -317,14 +310,71 @@ const features = [
   left: 10%;
 }
 
-.techstack {
-  display: flex;
-  flex-direction: column;
-  gap: 2vh;
-  align-items: center;
+@media (max-width: 800px) {
+  .velvet-container {
+    align-items: center;
+  }
+  .panel-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .photo-panel {
+    height: auto;
+    width: 100%;
+  }
+  .vertical-title {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 3rem;
+    position: static;
+    margin: 0;
+  }
+  .buttons-container {
+    margin-left: 0;
+    width: fit-content;
+    gap: 1vh;
+  }
+
+  .container-image-text {
+    height:20vh;
 }
 
-.techstack-image {
-  width: 6vh;
+  /* videos and images */
+  .velvet-start-image{
+    width:70%;
+    height: auto;
+    right:0;
+  }
+  .velvet-start-text{
+    top:3%;
+    left:0%;
+    width: 60%;
+  }
+  .velvet-writings-text{
+    top:-15%;
+    left:5%;
+    width: 95%;
+  }
+  .velvet-notes-text{
+    width:90%;
+    top: 30%;
+  }
+  .velvet-connections-text{
+    width:80%;
+    top:35%;
+  }
+  .velvet-ai-search-text{
+    top:0%;
+  }
+  .velvet-groups-image{
+    height: 80%;
+    width:auto;
+    right:0;
+  }
+  .velvet-groups-text{
+    left:0;
+    top:50%;
+  }
+
 }
 </style>
