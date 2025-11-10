@@ -10,10 +10,15 @@ import Navbar from "./components/Navbar.vue";
 </template>
 
 <style>
+
+
+
+/* components */
 .portfolio-container {
   display: flex;
   flex-direction: row;
   margin-top: 5vh;
+  gap:1vw;
 }
 
 .buttons-container {

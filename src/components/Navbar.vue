@@ -30,16 +30,17 @@ const items = ref([
 
 <template>
   <Menubar :model="items" class="menubar">
-  <template #item="{ item }">
+  <!-- <template #item="{ item }">
     <a @click="item.command">
       <img v-if="item.img" :src="item.img" class="menu-icon" />
       <span v-else>{{ item.label }}</span>
     </a>
-  </template>
+  </template> -->
   </Menubar>
 </template>
 
 <style scoped>
+
 .menubar {
   position: fixed;
   top: 0;

@@ -171,6 +171,7 @@ const openPDF = (type) => {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .left {
   text-align: left;
 }
@@ -186,8 +187,12 @@ const openPDF = (type) => {
 }
 
 .buttons-container {
+  margin: 0;
   display: flex;
+  flex-direction: row;
   gap: 1rem;
+  width: fit-content;
+  margin-right: auto;
 }
 
 .flag-container {
