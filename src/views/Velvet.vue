@@ -146,7 +146,7 @@ onMounted(() => {
         as="a"
         href="https://github.com/antoniamstr1/Velvet"
         target="_blank"
-        :style="{ backgroundColor: 'rgb(50, 11, 68)', border: 'none' }"
+        :style="{ border: 'none' }"
         rel="noopener noreferrer"
       ></Button>
 
@@ -156,7 +156,7 @@ onMounted(() => {
         as="a"
         href="https://velvet-dashboard.onrender.com/"
         target="_blank"
-        :style="{ backgroundColor: 'rgb(50, 11, 68)', border: 'none' }"
+        :style="{ border: 'none' }"
         rel="noopener noreferrer"
       ></Button>
     </div>

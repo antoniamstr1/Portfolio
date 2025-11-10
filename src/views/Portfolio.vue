@@ -34,6 +34,10 @@ onMounted(() => {
         <img src="/images/mode.png" class="responsive-img" />
         <p class="left">Dark and light mode</p>
       </div>
+    <div class="responsive-info">
+        <img src="/images/video.png" class="responsive-img" />
+        <p class="left">Video snippets of features on hover</p>
+      </div>
     </Panel>
 
     <TechStackPanel
@@ -48,7 +52,7 @@ onMounted(() => {
         as="a"
         href="https://github.com/antoniamstr1/Portfolio"
         target="_blank"
-        :style="{ backgroundColor: 'rgb(50, 11, 68)', border: 'none' }"
+        :style="{border: 'none' }"
         rel="noopener noreferrer"
       ></Button>
     </div>

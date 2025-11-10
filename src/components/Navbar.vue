@@ -9,7 +9,7 @@ const items = ref([
   {
     label: "Antonia",
     command: () => router.push("/"),
-    img: "/images/antonia2.png"
+    img: "/images/antonia.png"
   },
   {
     label: "Projects",
@@ -48,7 +48,7 @@ const items = ref([
   z-index: 1000;
 }
 .menu-icon{
-  height: 4rem;
+  height: 3rem;
   width: auto;
 }
 </style>

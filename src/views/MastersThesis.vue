@@ -75,7 +75,7 @@ MNIST dataset.            </p>
         as="a"
         href="https://github.com/antoniamstr1/diplomski_rad"
         target="_blank"
-        :style="{ backgroundColor: 'rgb(50, 11, 68)', border: 'none' }"
+        :style="{ border: 'none' }"
         rel="noopener noreferrer"
       ></Button>
 

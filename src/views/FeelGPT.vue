@@ -115,7 +115,7 @@ onMounted(() => {
         as="a"
         href="https://github.com/AntonioMisic77/FeelGPT"
         target="_blank"
-        :style="{ backgroundColor: 'rgb(50, 11, 68)', border: 'none' }"
+        :style="{border: 'none' }"
         rel="noopener noreferrer"
       ></Button>
 
@@ -125,7 +125,7 @@ onMounted(() => {
         as="a"
         href="https://www.fer.unizg.hr/rasip/dsd/feelgpt/project_description#"
         target="_blank"
-        :style="{ backgroundColor: 'rgb(50, 11, 68)', border: 'none' }"
+        :style="{ border: 'none' }"
         rel="noopener noreferrer"
       ></Button>
     </div>
