@@ -11,7 +11,7 @@ A **personal portfolio website** built with **Vue 3**, **Vite**, and **PrimeVue*
 Clone the repository:
 
 ```bash
-git clone <your-repo-url>
+git clone ...
 cd portfolio
 ```
 

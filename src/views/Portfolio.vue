@@ -13,7 +13,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="velvet-container">
+  <div class="portfolio-container">
     <h1 class="vertical-title">Portfolio</h1>
     <Panel class="photo-panel" style="border: none">
       <Card :style="{ marginBottom: '20px' }">
@@ -59,7 +59,7 @@ onMounted(() => {
 .left {
   text-align: left;
 }
-.responsive-info{
+.responsive-info {
   display: flex;
   align-items: center;
   gap: 1vw;

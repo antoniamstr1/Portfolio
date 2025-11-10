@@ -15,7 +15,7 @@ const features = [
     gif: "/videos/velvet/start.gif",
     textClass: "velvet-start-text",
     imageClass: "velvet-start-image",
-    containerHeight: "65vh",
+    asRow: true,
   },
   {
     title: "Writings",
@@ -24,7 +24,6 @@ const features = [
     gif: "/videos/velvet/writings.gif",
     textClass: "velvet-writings-text",
     imageClass: "velvet-writings-image",
-    containerHeight: "40vh",
   },
   {
     title: "Notes",
@@ -33,7 +32,7 @@ const features = [
     gif: "/videos/velvet/notes.gif",
     textClass: "velvet-notes-text",
     imageClass: "velvet-notes-image",
-    containerHeight: "40vh",
+    absolutePosition: true,
   },
   {
     title: "Highlights",
@@ -42,7 +41,6 @@ const features = [
     gif: "/videos/velvet/highlights.gif",
     textClass: "velvet-highlights-text",
     imageClass: "velvet-highlights-image",
-    containerHeight: "40vh",
   },
   {
     title: "Connections",
@@ -51,7 +49,7 @@ const features = [
     gif: "/videos/velvet/connections.gif",
     textClass: "velvet-connections-text",
     imageClass: "velvet-connections-image",
-    containerHeight: "50vh",
+    absolutePosition: true,
   },
   {
     title: "AI Search",
@@ -60,7 +58,6 @@ const features = [
     gif: "/videos/velvet/ai-search.gif",
     textClass: "velvet-ai-search-text",
     imageClass: "velvet-ai-search-image",
-    containerHeight: "40vh",
   },
   {
     title: "Groups",
@@ -69,7 +66,7 @@ const features = [
     gif: "/videos/velvet/groups.gif",
     textClass: "velvet-groups-text",
     imageClass: "velvet-groups-image",
-    containerHeight: "50vh",
+    asRow: true,
   },
 ];
 
@@ -81,7 +78,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="velvet-container">
+  <div class="portfolio-container">
     <h1 class="vertical-title">Velvet</h1>
 
     <Panel class="photo-panel" style="border: none">
@@ -102,25 +99,26 @@ onMounted(() => {
       <div
         v-for="(feature, index) in features"
         :key="index"
-        :class="['container-image-text']"
-        :style="{ height: isMobile ? '25vh' : feature.containerHeight }"
+        :class="
+          feature.asRow ? 'container-image-text-as-row' : 'container-image-text'
+        "
+        :style="{
+          paddingTop: feature.absolutePosition ? '20vh' : '0',
+        }"
       >
-        <div class="gif-wrapper">
-          <img
-            :src="hovered[index] ? feature.gif : feature.img"
-            @mouseenter="hovered[index] = true"
-            @mouseleave="hovered[index] = false"
-            :class="['hover-gif', feature.imageClass]"
-            loading="lazy"
-          />
-        </div>
-
         <Card :class="['card-velvet', feature.textClass]">
           <template #title>{{ feature.title }}</template>
           <template #content>
             <p>{{ feature.text }}</p>
           </template>
         </Card>
+        <img
+          :src="hovered[index] ? feature.gif : feature.img"
+          @mouseenter="hovered[index] = true"
+          @mouseleave="hovered[index] = false"
+          :class="['hover-gif', feature.imageClass]"
+          loading="lazy"
+        />
       </div>
     </Panel>
     <TechStackPanel
@@ -136,7 +134,7 @@ onMounted(() => {
         'materialui',
         'postgres',
         'supabase',
-        'gemini'
+        'gemini',
       ]"
       :layout="isMobile ? 'grid-mobile' : 'grid-column'"
     />
@@ -166,97 +164,69 @@ onMounted(() => {
 </template>
 
 <style scoped>
-
 /* custom design classes for each element */
 /* start */
 .velvet-start-image {
-  position: absolute;
-  right: 5vw;
-  top: 0;
-  width: 50%;
+  width: 40%;
   height: auto;
 }
 .velvet-start-text {
-  left: 3vh;
-  top: 40%;
   width: 20vw;
 }
 /* writings */
 .velvet-writings-image {
-  position: absolute;
   width: 100%;
   height: auto;
-  top: 20%;
-  left:0;
 }
 .velvet-writings-text {
-  left: 15%;
-  top: -5%;
-  width: 20vw;
+  width: 70%;
+  margin-left: auto;
 }
 /* notes */
 .velvet-notes-image {
-  position: absolute;
-  right: 0;
-  top: -5%;
   width: 80%;
   height: auto;
 }
 .velvet-notes-text {
-  left: 5%;
-  top: 25%;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 20vw;
 }
 /* highlights */
 .velvet-highlights-image {
-  position: absolute;
-  left: 0;
   width: 100%;
   height: auto;
 }
 .velvet-highlights-text {
   width: 100%;
-  top: 5%;
 }
 /* connections */
 .velvet-connections-image {
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 90%;
   height: auto;
 }
 .velvet-connections-text {
-  top: 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 35%;
-  left: 0%;
 }
 /* ai searh */
 .velvet-ai-search-image {
-  position: absolute;
-  top: 60%;
-  right: 0;
   width: 90%;
   height: auto;
 }
 .velvet-ai-search-text {
-  top: 30%;
   width: 75%;
-  right: 0%;
 }
 /* groups */
 .velvet-groups-image {
-  position: absolute;
-  top: 40%;
-  right: 20%;
   width: 30%;
   height: auto;
-  margin-bottom: 20vh;
 }
 .velvet-groups-text {
-  top: 60%;
   width: 45%;
-  left: 10%;
 }
 
 @media (max-width: 800px) {
@@ -264,59 +234,27 @@ onMounted(() => {
   .velvet-start-image {
     width: 70%;
     height: auto;
-    right: 0;
   }
   .velvet-start-text {
-    top: 35%;
-    left: 0%;
     width: 60%;
   }
   .velvet-writings-text {
-    top: 0%;
-    left: 5%;
     width: 95%;
   }
-  .velvet-writings-image{
-    top: 20vh;
-    left:-10%;
-    width:90vw;
+  .velvet-writings-image {
+    width: 90vw;
   }
   .velvet-notes-text {
     width: 90%;
-    top: 0%;
-  }
-  .velvet-notes-image{
-    top: 75%;
   }
 
-  .velvet-highlights-text{
-    top: 10%;
-  }
-  .velvet-highlights-image{
-    top:80%;
-  }
   .velvet-connections-text {
     width: 100%;
-    top:60%
-    }
-  .velvet-connections-image{
-    top:0;
   }
-  .velvet-ai-search-text {
-    top: 10%;
-  }
-  .velvet-ai-search-image{
-    top:80%;
-  }
+
   .velvet-groups-image {
     height: 100%;
     width: auto;
-    right: 5%;
-    top: 10%;
-  }
-  .velvet-groups-text {
-    left: 0;
-    top:10%;
   }
 }
 </style>

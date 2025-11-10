@@ -9,6 +9,7 @@ const items = ref([
   {
     label: "Antonia",
     command: () => router.push("/"),
+    img: "/images/antonia2.png"
   },
   {
     label: "Projects",
@@ -28,7 +29,14 @@ const items = ref([
 </script>
 
 <template>
-  <Menubar :model="items" class="menubar" />
+  <Menubar :model="items" class="menubar">
+  <template #item="{ item }">
+    <a @click="item.command">
+      <img v-if="item.img" :src="item.img" class="menu-icon" />
+      <span v-else>{{ item.label }}</span>
+    </a>
+  </template>
+  </Menubar>
 </template>
 
 <style scoped>
@@ -38,5 +46,9 @@ const items = ref([
   left: 0;
   width: 100%;
   z-index: 1000;
+}
+.menu-icon{
+  height: 4rem;
+  width: auto;
 }
 </style>

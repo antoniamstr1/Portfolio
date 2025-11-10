@@ -17,11 +17,16 @@ const props = defineProps({
 
 const techList = [
   {
+    name: "visage",
+    link: "https://visagetechnologies.com/visage-sdk/",
+    icon: "/images/techstack-icons/visage.png",
+  },
+  {
     name: "js",
     link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     icon: "/images/techstack-icons/js.png",
   },
-    {
+  {
     name: "ts",
     link: "https://www.python.org/",
     icon: "/images/techstack-icons/ts.png",
@@ -41,12 +46,12 @@ const techList = [
     link: "https://react.dev/",
     icon: "/images/techstack-icons/react.png",
   },
-      {
+  {
     name: "vue",
     link: "https://vuejs.org/",
     icon: "/images/techstack-icons/vue.png",
   },
-    {
+  {
     name: "primevue",
     link: "https://primevue.org/",
     icon: "/images/techstack-icons/primevue.png",
@@ -67,11 +72,16 @@ const techList = [
     icon: "/images/techstack-icons/vitest.png",
   },
   {
+    name: "jest",
+    link: "https://jestjs.io/",
+    icon: "/images/techstack-icons/jest.webp",
+  },
+  {
     name: "postgres",
     link: "https://www.postgresql.org/download/",
     icon: "/images/techstack-icons/postgres.png",
   },
-    {
+  {
     name: "supabase",
     link: "https://supabase.com/",
     icon: "/images/techstack-icons/supabase.png",
@@ -101,7 +111,7 @@ const techList = [
     link: "https://git-scm.com/",
     icon: "/images/techstack-icons/git.png",
   },
-    {
+  {
     name: "docker",
     link: "http://docker.com/",
     icon: "/images/techstack-icons/docker.png",
@@ -112,17 +122,49 @@ const techList = [
     icon: "/images/techstack-icons/render.png",
   },
   {
+    name: "azure",
+    link: "https://azure.microsoft.com/en-us/",
+    icon: "/images/techstack-icons/azure.png",
+  },
+
+  {
     name: "gemini",
     link: "https://www.npmjs.com/package/@google/genai",
     icon: "/images/techstack-icons/gemini.webp",
   },
 
+  //mython modules
+    {
+    name: "scipy",
+    link: "https://scipy.org/",
+    icon: "/images/techstack-icons/scipy.png",
+  },
+    {
+    name: "numpy",
+    link: "https://numpy.org/",
+    icon: "/images/techstack-icons/numpy.png",
+  },
+    {
+    name: "scikit",
+    link: "https://scikit-learn.org/stable/",
+    icon: "/images/techstack-icons/scikit-learn.png",
+  },
+    {
+    name: "matplotlib",
+    link: "https://matplotlib.org/",
+    icon: "/images/techstack-icons/matplotlib.webp",
+  },
+      {
+    name: "jupyter",
+    link: "https://jupyter.org/",
+    icon: "/images/techstack-icons/jupyter.png",
+  },
+  
 ];
 
 const displayedTechList = computed(() => {
   return techList.filter((el) => props.data.includes(el.name));
 });
-
 </script>
 
 <template>
@@ -133,11 +175,11 @@ const displayedTechList = computed(() => {
         <a
           v-for="tech in displayedTechList"
           :key="tech.name"
-          href="/images/techstack-icons/vitest.png"
+          :href="tech.link"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img :src="tech.icon" :alt="tech.name" class="techstack-image" /> 
+          <img :src="tech.icon" :alt="tech.name" class="techstack-image" />
         </a>
       </div>
     </template>
@@ -145,7 +187,7 @@ const displayedTechList = computed(() => {
 </template>
 
 <style scoped>
-.techstack-panel{
+.techstack-panel {
   height: fit-content;
 }
 .techstack.column {
@@ -161,18 +203,18 @@ const displayedTechList = computed(() => {
   align-items: center;
 }
 
-.techstack.grid-mobile{
+.techstack.grid-mobile {
   display: grid;
-  grid-template-columns:  repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: auto;
   gap: 5vh;
   justify-content: center;
   align-items: center;
 }
 
-.techstack.grid-row{
+.techstack.grid-row {
   display: grid;
-  grid-template-columns:  repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: auto;
   gap: 1vw;
   justify-content: center;
@@ -180,10 +222,10 @@ const displayedTechList = computed(() => {
 }
 .techstack.grid-column {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);   
-  grid-template-rows: repeat(9, auto);    
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(9, auto);
   gap: 1vw;
-  grid-auto-flow: column;                 
+  grid-auto-flow: column;
 }
 .techstack-image {
   width: 6vh;

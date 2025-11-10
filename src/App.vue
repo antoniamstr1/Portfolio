@@ -1,6 +1,5 @@
 <script setup>
 import Navbar from "./components/Navbar.vue";
-
 </script>
 
 <template>
@@ -11,17 +10,12 @@ import Navbar from "./components/Navbar.vue";
 </template>
 
 <style>
-.velvet-container {
+.portfolio-container {
   display: flex;
   flex-direction: row;
   margin-top: 5vh;
 }
-@media (max-width: 768px) {
-  .velvet-container {
-    display: flex;
-    flex-direction: column;
-  }
-}
+
 .buttons-container {
   display: flex;
   flex-direction: column;
@@ -60,8 +54,18 @@ import Navbar from "./components/Navbar.vue";
   position: relative;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
+}
+.container-image-text-as-row {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0; /* remove space between them */
+  margin-bottom: 5vh;
 }
 
 .hover-gif {
@@ -72,16 +76,12 @@ import Navbar from "./components/Navbar.vue";
 }
 
 .card-velvet {
-  position: absolute;
   background-color: rgb(249, 249, 249);
   z-index: 1;
 }
 
-  @media (max-width: 800px) {
-  .velvet-container {
-    align-items: center;
-  }
-  .panel-container {
+@media (max-width: 800px) {
+  .portfolio-container {
     flex-direction: column;
     align-items: center;
   }
@@ -96,8 +96,8 @@ import Navbar from "./components/Navbar.vue";
     position: static;
     margin: 0;
   }
-  
-  .card-velvet{
+
+  .card-velvet {
     font-size: smaller;
   }
   .buttons-container {
@@ -105,7 +105,5 @@ import Navbar from "./components/Navbar.vue";
     width: fit-content;
     gap: 1vh;
   }
-
-
 }
 </style>
