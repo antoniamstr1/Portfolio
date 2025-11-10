@@ -105,7 +105,7 @@ const openPDF = (type) => {
               'c++',
               'git',
             ]"
-            layout="row"
+            layout="grid-row"
           ></TechStackPanel>
           <Fieldset
             legend="Academic projects"

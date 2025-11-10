@@ -111,6 +111,11 @@ const techList = [
     link: "https://render.com/",
     icon: "/images/techstack-icons/render.png",
   },
+  {
+    name: "gemini",
+    link: "https://www.npmjs.com/package/@google/genai",
+    icon: "/images/techstack-icons/gemini.webp",
+  },
 
 ];
 
@@ -140,6 +145,9 @@ const displayedTechList = computed(() => {
 </template>
 
 <style scoped>
+.techstack-panel{
+  height: fit-content;
+}
 .techstack.column {
   display: flex;
   flex-direction: column;
@@ -153,6 +161,30 @@ const displayedTechList = computed(() => {
   align-items: center;
 }
 
+.techstack.grid-mobile{
+  display: grid;
+  grid-template-columns:  repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 5vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.techstack.grid-row{
+  display: grid;
+  grid-template-columns:  repeat(6, 1fr);
+  grid-auto-rows: auto;
+  gap: 1vw;
+  justify-content: center;
+  align-items: center;
+}
+.techstack.grid-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   
+  grid-template-rows: repeat(9, auto);    
+  gap: 1vw;
+  grid-auto-flow: column;                 
+}
 .techstack-image {
   width: 6vh;
 }

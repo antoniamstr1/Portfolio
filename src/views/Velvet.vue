@@ -2,7 +2,7 @@
 import Card from "primevue/card";
 import Panel from "primevue/panel";
 import Button from "primevue/button";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import TechStackPanel from "../components/TechStackPanel.vue";
 
 const hovered = ref({});
@@ -72,6 +72,12 @@ const features = [
     containerHeight: "50vh",
   },
 ];
+
+const isMobile = ref(false);
+
+onMounted(() => {
+  isMobile.value = window.innerWidth < 800;
+});
 </script>
 
 <template>
@@ -97,7 +103,7 @@ const features = [
         v-for="(feature, index) in features"
         :key="index"
         :class="['container-image-text']"
-        :style="{ height: feature.containerHeight }"
+        :style="{ height: isMobile ? '25vh' : feature.containerHeight }"
       >
         <div class="gif-wrapper">
           <img
@@ -112,7 +118,7 @@ const features = [
         <Card :class="['card-velvet', feature.textClass]">
           <template #title>{{ feature.title }}</template>
           <template #content>
-            <p class="m-0">{{ feature.text }}</p>
+            <p>{{ feature.text }}</p>
           </template>
         </Card>
       </div>
@@ -127,7 +133,12 @@ const features = [
         'vitest',
         'docker',
         'render',
+        'materialui',
+        'postgres',
+        'supabase',
+        'gemini'
       ]"
+      :layout="isMobile ? 'grid-mobile' : 'grid-column'"
     />
 
     <div class="buttons-container">
@@ -155,71 +166,7 @@ const features = [
 </template>
 
 <style scoped>
-.velvet-container {
-  display: flex;
-  flex-direction: row;
-  margin-top: 5vh;
-}
-@media (max-width: 768px) {
-  .velvet-container {
-    display: flex;
-    flex-direction: column;
-  }
-}
-.buttons-container {
-  display: flex;
-  flex-direction: column;
-  gap: 5vh;
-  margin-left: 5vh;
-  margin-top: 5vh;
-}
-.vertical-title {
-  /* vertical direction */
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-size: 5rem;
-  font-weight: bold;
-  transform: rotate(180deg);
-  color: rgb(50, 11, 68);
 
-  /* positioning to the left */
-  position: absolute;
-  left: 0;
-  bottom: 10vh;
-}
-
-.teckstack {
-  margin-top: 5vh;
-}
-
-.photo-panel {
-  width: 60vw;
-  height: 80vh;
-  overflow-y: scroll;
-  box-sizing: border-box;
-  scrollbar-width: none;
-}
-
-.container-image-text {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10vh;
-}
-
-.hover-gif {
-  height: auto;
-  transition: opacity 0.3s ease;
-  object-fit: cover;
-  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
-}
-
-.card-velvet {
-  position: absolute;
-  background-color: rgb(249, 249, 249);
-  z-index: 1;
-}
 /* custom design classes for each element */
 /* start */
 .velvet-start-image {
@@ -236,9 +183,11 @@ const features = [
 }
 /* writings */
 .velvet-writings-image {
+  position: absolute;
   width: 100%;
   height: auto;
   top: 20%;
+  left:0;
 }
 .velvet-writings-text {
   left: 15%;
@@ -311,70 +260,63 @@ const features = [
 }
 
 @media (max-width: 800px) {
-  .velvet-container {
-    align-items: center;
-  }
-  .panel-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .photo-panel {
-    height: auto;
-    width: 100%;
-  }
-  .vertical-title {
-    writing-mode: horizontal-tb;
-    transform: none;
-    font-size: 3rem;
-    position: static;
-    margin: 0;
-  }
-  .buttons-container {
-    margin-left: 0;
-    width: fit-content;
-    gap: 1vh;
-  }
-
-  .container-image-text {
-    height:20vh;
-}
-
   /* videos and images */
-  .velvet-start-image{
-    width:70%;
+  .velvet-start-image {
+    width: 70%;
     height: auto;
-    right:0;
+    right: 0;
   }
-  .velvet-start-text{
-    top:3%;
-    left:0%;
+  .velvet-start-text {
+    top: 35%;
+    left: 0%;
     width: 60%;
   }
-  .velvet-writings-text{
-    top:-15%;
-    left:5%;
+  .velvet-writings-text {
+    top: 0%;
+    left: 5%;
     width: 95%;
   }
-  .velvet-notes-text{
-    width:90%;
-    top: 30%;
+  .velvet-writings-image{
+    top: 20vh;
+    left:-10%;
+    width:90vw;
   }
-  .velvet-connections-text{
-    width:80%;
-    top:35%;
+  .velvet-notes-text {
+    width: 90%;
+    top: 0%;
   }
-  .velvet-ai-search-text{
-    top:0%;
-  }
-  .velvet-groups-image{
-    height: 80%;
-    width:auto;
-    right:0;
-  }
-  .velvet-groups-text{
-    left:0;
-    top:50%;
+  .velvet-notes-image{
+    top: 75%;
   }
 
+  .velvet-highlights-text{
+    top: 10%;
+  }
+  .velvet-highlights-image{
+    top:80%;
+  }
+  .velvet-connections-text {
+    width: 100%;
+    top:60%
+    }
+  .velvet-connections-image{
+    top:0;
+  }
+  .velvet-ai-search-text {
+    top: 10%;
+  }
+  .velvet-ai-search-image{
+    top:80%;
+  }
+  .velvet-groups-image {
+    height: 100%;
+    width: auto;
+    right: 5%;
+    top: 10%;
+  }
+  .velvet-groups-text {
+    left: 0;
+    top:10%;
+  }
 }
 </style>
