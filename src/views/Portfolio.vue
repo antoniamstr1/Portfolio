@@ -34,7 +34,7 @@ onMounted(() => {
         <img src="/images/mode.png" class="responsive-img" />
         <p class="left">Dark and light mode</p>
       </div>
-    <div class="responsive-info">
+      <div class="responsive-info">
         <img src="/images/video.png" class="responsive-img" />
         <p class="left">Video snippets of features on hover</p>
       </div>
@@ -52,7 +52,7 @@ onMounted(() => {
         as="a"
         href="https://github.com/antoniamstr1/Portfolio"
         target="_blank"
-        :style="{border: 'none' }"
+        :style="{ border: 'none' }"
         rel="noopener noreferrer"
       ></Button>
     </div>
@@ -62,11 +62,19 @@ onMounted(() => {
 <style scoped>
 .left {
   text-align: left;
+  margin-left: 1rem;
 }
 .responsive-info {
   display: flex;
   align-items: center;
   gap: 1vw;
+}
+
+@media (max-width) {
+  .responsive-info {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 .responsive-img {
   width: 2rem;

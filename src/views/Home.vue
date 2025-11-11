@@ -68,6 +68,13 @@ const carouselProjectsData = [
   text-align: left;
 }
 
+@media(max-width:800px){
+  .home-page{
+    width: 80vw;
+  }
+  
+}
+
 .clickable-card {
   cursor: pointer;
   height: 30vh;

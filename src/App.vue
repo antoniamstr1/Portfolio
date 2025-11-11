@@ -91,6 +91,8 @@ import Navbar from "./components/Navbar.vue";
   .photo-panel {
     height: auto;
     width: 100%;
+    margin-bottom: 5vh;
+    
   }
   .vertical-title {
     writing-mode: horizontal-tb;

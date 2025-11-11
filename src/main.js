@@ -14,16 +14,9 @@ const MyPurpleTheme = {
     semantic: {
         ...Aura.semantic,
         primary: {
-            50: '#f3e8ff',
-            100: '#e9d5ff',
-            200: '#d8b4fe',
-            300: '#c084fc',
-            400: '#a855f7',
+            400: '#636bff',
             500: '#636bff',
-            600: '#7e22ce',
-            700: '#6b21a8',
-            800: '#581c87',
-            900: '#3b0764'
+
         }
     },
 }

@@ -72,7 +72,6 @@ onMounted(() => {
             <p>{{ feature.text }}</p>
           </template>
         </Card>
-        <div class="gif-wrapper">
           <img
             :src="hovered[index] ? feature.gif : feature.img"
             @mouseenter="hovered[index] = true"
@@ -80,7 +79,6 @@ onMounted(() => {
             :class="['hover-gif', feature.imageClass]"
             loading="lazy"
           />
-        </div>
 
         
       </div>

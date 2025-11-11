@@ -232,29 +232,32 @@ onMounted(() => {
 @media (max-width: 800px) {
   /* videos and images */
   .velvet-start-image {
-    width: 70%;
+    width: 50%;
     height: auto;
   }
   .velvet-start-text {
-    width: 60%;
+    width: 50%;
   }
   .velvet-writings-text {
-    width: 95%;
+    width: 65%;
   }
   .velvet-writings-image {
-    width: 90vw;
+    width: 70vw;
+  }
+
+    .velvet-highlights-image {
+    width: 70vw;
   }
   .velvet-notes-text {
-    width: 90%;
+    width: 80%;
   }
 
   .velvet-connections-text {
-    width: 100%;
+    width: 80%;
   }
 
   .velvet-groups-image {
-    height: 100%;
-    width: auto;
+    width: 40%;
   }
 }
 </style>
