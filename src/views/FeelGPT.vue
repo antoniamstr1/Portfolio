@@ -2,7 +2,7 @@
 import Card from "primevue/card";
 import Panel from "primevue/panel";
 import Button from "primevue/button";
-import Fieldset  from "primevue/fieldset";
+import Fieldset from "primevue/fieldset";
 import { ref, onMounted } from "vue";
 import TechStackPanel from "../components/TechStackPanel.vue";
 
@@ -58,36 +58,43 @@ onMounted(() => {
             </p>
           </template>
         </Card>
-        
       </div>
       <div
         v-for="(feature, index) in features"
         :key="index"
         :class="['container-image-text']"
-        
       >
-      <Card :class="['card-velvet', feature.textClass]">
+        <Card :class="['card-velvet', feature.textClass]">
           <template #title>{{ feature.title }}</template>
           <template #content>
             <p>{{ feature.text }}</p>
           </template>
         </Card>
-          <img
-            :src="hovered[index] ? feature.gif : feature.img"
-            @mouseenter="hovered[index] = true"
-            @mouseleave="hovered[index] = false"
-            :class="['hover-gif', feature.imageClass]"
-            loading="lazy"
-          />
-
-        
+        <img
+          :src="hovered[index] ? feature.gif : feature.img"
+          @mouseenter="hovered[index] = true"
+          @mouseleave="hovered[index] = false"
+          :class="['hover-gif', feature.imageClass]"
+          loading="lazy"
+        />
       </div>
 
-      <Fieldset class="left" legend="Deployment">
-    <p >
-        The preview of the project is not possible because the visage|SDK
-            licence expired.</p>
-</Fieldset>
+      <Fieldset class="left" legend="Project Demostration">
+        <p>
+          The project preview is currently unavailable due to the expiration of
+          the Visage|SDK license.
+        </p>
+        <p>
+          For more features visit the course web page 
+          <a
+            href="https://www.fer.unizg.hr/rasip/dsd/feelgpt/project_description#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            the DSD course web page 
+          </a>
+        .</p>
+      </Fieldset>
     </Panel>
     <TechStackPanel
       :data="[
@@ -113,7 +120,7 @@ onMounted(() => {
         as="a"
         href="https://github.com/AntonioMisic77/FeelGPT"
         target="_blank"
-        :style="{border: 'none' }"
+        :style="{ border: 'none' }"
         rel="noopener noreferrer"
       ></Button>
 
@@ -131,44 +138,40 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.left{
+.left {
   text-align: left;
   width: fit-content;
 }
-.feelgpt-chat-image{
-  width:100%;
-
+.feelgpt-chat-image {
+  width: 100%;
 }
-.feelgpt-chat-text{
-  max-width:100%;
-
+.feelgpt-chat-text {
+  max-width: 90%;
+  margin-right: auto;
 }
 
-.feelgpt-chat-history-image{
-  width:100%;
+.feelgpt-chat-history-image {
+  width: 100%;
 }
-.feelgpt-chat-history-text{
-  max-width:90%;
+.feelgpt-chat-history-text {
+  max-width: 90%;
   margin-left: auto;
 }
 
-.feelgpt-mood-tracker-image{
-  width:80%;
-  left:0;
+.feelgpt-mood-tracker-image {
+  width: 80%;
+  left: 0;
   margin-right: auto;
-
 }
-.feelgpt-mood-tracker-text{
-  max-width:90%;
+.feelgpt-mood-tracker-text {
+  max-width: 90%;
   margin-left: auto;
 }
 @media (max-width: 800px) {
-
-  .feelgpt-mood-tracker-image{
-  width:100%;
-  left:0;
-  margin-right: auto;
-
-}
+  .feelgpt-mood-tracker-image {
+    width: 100%;
+    left: 0;
+    margin-right: auto;
+  }
 }
 </style>

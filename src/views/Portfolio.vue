@@ -22,7 +22,7 @@ onMounted(() => {
           <p class="m-0">
             It is a Vue 3 web page made to showcase the previus project and give
             progress info on the current ones. Gives info about the features
-            throught hover animations, used technologies and project links.
+            throught animations, used technologies and project links.
           </p>
         </template>
       </Card>

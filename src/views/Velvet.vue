@@ -2,6 +2,7 @@
 import Card from "primevue/card";
 import Panel from "primevue/panel";
 import Button from "primevue/button";
+import Fieldset from "primevue/fieldset";
 import { ref, onMounted } from "vue";
 import TechStackPanel from "../components/TechStackPanel.vue";
 
@@ -36,7 +37,7 @@ const features = [
   },
   {
     title: "Highlights",
-    text: "Selected text can be highlighted in desired color.",
+    text: "Users can highlight selected text in any color to mark or emphasize the most important information.",
     img: "/images/velvet/highlights.png",
     gif: "/videos/velvet/highlights.gif",
     textClass: "velvet-highlights-text",
@@ -44,7 +45,7 @@ const features = [
   },
   {
     title: "Connections",
-    text: "On desired position, leave a reference — a step in a chain of references accessed by arrows.",
+    text: "On desired position, leave a reference: think of it as a link in a chain of references that can be navigated with arrows.",
     img: "/images/velvet/connections.png",
     gif: "/videos/velvet/connections.gif",
     textClass: "velvet-connections-text",
@@ -53,7 +54,7 @@ const features = [
   },
   {
     title: "AI Search",
-    text: "Selected text is processed through Gemini LLM and returns a short explanation.",
+    text: "The selected text is processed by the Gemini LLM, which then provides a concise explanation of its content.",
     img: "/images/velvet/ai-search.png",
     gif: "/videos/velvet/ai-search.gif",
     textClass: "velvet-ai-search-text",
@@ -61,7 +62,7 @@ const features = [
   },
   {
     title: "Groups",
-    text: "Group each page by its content or meaning to a custom group.",
+    text: "Organize pages into custom groups based on their content or overall meaning.",
     img: "/images/velvet/groups.png",
     gif: "/videos/velvet/groups.gif",
     textClass: "velvet-groups-text",
@@ -120,6 +121,12 @@ onMounted(() => {
           loading="lazy"
         />
       </div>
+      <Fieldset class="left" legend="Velvet Dashboard">
+        <p>
+          Centralized <a src="https://velvet-dashboard.onrender.com">dashboard</a> displaying all page data, with filtering by
+          group and page for easy monitoring and management.
+        </p>
+      </Fieldset>
     </Panel>
     <TechStackPanel
       :data="[
@@ -164,6 +171,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.left {
+  text-align: left;
+}
+
 /* custom design classes for each element */
 /* start */
 .velvet-start-image {
@@ -245,7 +256,7 @@ onMounted(() => {
     width: 70vw;
   }
 
-    .velvet-highlights-image {
+  .velvet-highlights-image {
     width: 70vw;
   }
   .velvet-notes-text {
