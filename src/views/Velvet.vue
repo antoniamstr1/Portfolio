@@ -123,7 +123,7 @@ onMounted(() => {
       </div>
       <Fieldset class="left" legend="Velvet Dashboard">
         <p>
-          Centralized <a src="https://velvet-dashboard.onrender.com">dashboard</a> displaying all page data, with filtering by
+          Centralized <a href="https://velvet-dashboard.onrender.com">dashboard</a> displaying all page data, with filtering by
           group and page for easy monitoring and management.
         </p>
       </Fieldset>
