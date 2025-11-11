@@ -13,7 +13,7 @@ const router = useRouter();
 const openPDF = (type) => {
   if (type === "mdu") window.open("/pdfs/mdu.pdf", "_blank");
   if (type === "cv") window.open("/pdfs/cv.pdf", "_blank");
-  if (type === "cv") window.open("/pdfs/letter.pdf", "_blank");
+  if (type === "letter") window.open("/pdfs/letter.pdf", "_blank");
 };
 </script>
 
@@ -27,7 +27,7 @@ const openPDF = (type) => {
         <Tab value="3">Skills</Tab>
         <Tab value="4">Languages</Tab>
       </TabList>
-      <TabPanels>
+      <TabPanels class="tabpanels">
         <TabPanel value="0">
           <p class="left">
             Software Engineering Master’s graduate seeking an opportunity to
@@ -40,7 +40,8 @@ const openPDF = (type) => {
                   Velika Gorica, Croatia<br />
                   0093145837<br />
                   <a href="mailto:mestrovic.antonia@gmail.com">
-                  mestrovic.antonia@gmail.com</a>
+                    mestrovic.antonia@gmail.com</a
+                  >
                 </p>
               </template>
             </Card>
@@ -107,35 +108,35 @@ const openPDF = (type) => {
             ]"
             layout="grid-row"
           ></TechStackPanel>
-          <Fieldset
-            legend="Academic projects"
-            class="left academic-projects-container"
-          >
-            <p class="left">
-              <u>CROZ project</u>
-              <br />
-              As part of the Software Engineering course, I participated in the
-              development of a full-stack application under the mentorship from
-              CROZ. My role was <b>backend developer</b> – Spring Boot.
-            </p>
-            <p class="left">
-              <u>Visage project</u>
-              <br />
-              As part of the Distributed Software Development course, I worked
-              on the FeelGPT project under the guidance of Visage Technologies
-              in collaboration with Mälardalen University (MDU). My role was
-              <b>frontend developer</b> in React.js (a full-stack web
-              application using React and Node.js that integrates a LLM).
-            </p>
-            <div class="buttons-container">
-              <Button @click="openPDF('letter')"
-                >Course Certificate from MDU</Button
-              >
-              <Button label="Open PDF" @click="() => router.push('/FeelGPT')"
-                >FeelGPT</Button
-              >
-            </div>
-          </Fieldset>
+            <Fieldset
+              legend="Academic projects"
+              class="left academic-projects-container"
+            >
+              <p class="left">
+                <u>CROZ project</u>
+                <br />
+                As part of the Software Engineering course, I participated in
+                the development of a full-stack application under the mentorship
+                from CROZ. My role was <b>backend developer</b> – Spring Boot.
+              </p>
+              <p class="left">
+                <u>Visage project</u>
+                <br />
+                As part of the Distributed Software Development course, I worked
+                on the FeelGPT project under the guidance of Visage Technologies
+                in collaboration with Mälardalen University (MDU). My role was
+                <b>frontend developer</b> in React.js (a full-stack web
+                application using React and Node.js that integrates a LLM).
+              </p>
+              <div class="buttons-container">
+                <Button @click="openPDF('letter')"
+                  >Course Certificate from MDU</Button
+                >
+                <Button label="Open PDF" @click="() => router.push('/FeelGPT')"
+                  >FeelGPT</Button
+                >
+              </div>
+            </Fieldset>
         </TabPanel>
         <TabPanel value="4">
           <div class="left flag-container">
@@ -144,19 +145,23 @@ const openPDF = (type) => {
               src="/images/languages/english.png"
               alt="English"
             />
-            <p>English</p><p style="color: gray;">(C1)</p>
+            <p>English</p>
+            <p style="color: gray">(C1)</p>
           </div>
           <div class="left flag-container">
             <img class="flag" src="/images/languages/italy.png" alt="Italian" />
-            <p>Italian</p><p style="color: gray;">(B1)</p>
+            <p>Italian</p>
+            <p style="color: gray">(B1)</p>
           </div>
           <div class="left flag-container">
             <img class="flag" src="/images/languages/german.png" alt="German" />
-            <p>German</p><p style="color: gray;">(B1)</p>
+            <p>German</p>
+            <p style="color: gray">(B1)</p>
           </div>
           <div class="left flag-container">
             <img class="flag" src="/images/languages/spain.png" alt="German" />
-            <p>Spanish</p><p style="color: gray;">(beginner)</p>
+            <p>Spanish</p>
+            <p style="color: gray">(beginner)</p>
           </div>
         </TabPanel>
       </TabPanels>
@@ -165,7 +170,10 @@ const openPDF = (type) => {
 </template>
 
 <style scoped>
-.cv-container{
+.p-tabpanels{
+  margin-bottom: 2rem;
+}
+.cv-container {
   position: fixed;
   top: 10vh;
   left: 50%;
@@ -180,6 +188,16 @@ const openPDF = (type) => {
   padding: 0 5vw 0 5vw;
   width: fit-content;
   margin-top: 5vh;
+}
+
+@media (max-width: 800px) {
+  .cv-container {
+    width: 100vw;
+    max-height: 95vh;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+  }
+
 }
 
 .academic-projects-container {
@@ -205,8 +223,8 @@ const openPDF = (type) => {
   height: 2rem;
   margin-right: 1rem;
 }
-@media(max-width: 800px){
-  .cv-container{
+@media (max-width: 800px) {
+  .cv-container {
     width: 100vw;
   }
 }
