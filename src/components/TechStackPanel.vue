@@ -152,7 +152,7 @@ const techList = [
     {
     name: "matplotlib",
     link: "https://matplotlib.org/",
-    icon: "/images/techstack-icons/matplotlib.webp",
+    icon: "/images/techstack-icons/matplotlib.png",
   },
       {
     name: "jupyter",
