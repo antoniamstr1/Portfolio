@@ -12,6 +12,11 @@ const products = [
     link: "/velvet",
   },
   {
+    title: "TheTranslator",
+    description: "Translates and analyzes Italian/Spanish to English ",
+    link: "/TheTranslator",
+  },
+  {
     title: "FeelGPT",
     description: "ChatBOT based on your emotions",
     link: "/feelGPT",

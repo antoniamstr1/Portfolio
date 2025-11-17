@@ -102,10 +102,64 @@ const techList = [
     icon: "/images/techstack-icons/c++.webp",
   },
   {
+    name: "c#",
+    link: "",
+    icon: "/images/techstack-icons/csharp.png",
+  },
+  {
+    name: "dotnet",
+    link: "https://dotnet.microsoft.com/en-us/",
+    icon: "/images/techstack-icons/dotnet.png",
+  },
+  {
     name: "python",
     link: "https://www.python.org/",
     icon: "/images/techstack-icons/python.png",
   },
+  {
+    name: "flask",
+    link: "https://flask.palletsprojects.com/en/stable/",
+    icon: "/images/techstack-icons/flask.webp",
+  },
+
+  //python modules
+  {
+    name: "scipy",
+    link: "https://scipy.org/",
+    icon: "/images/techstack-icons/scipy.png",
+  },
+  {
+    name: "numpy",
+    link: "https://numpy.org/",
+    icon: "/images/techstack-icons/numpy.png",
+  },
+  {
+    name: "scikit",
+    link: "https://scikit-learn.org/stable/",
+    icon: "/images/techstack-icons/scikit-learn.png",
+  },
+  {
+    name: "matplotlib",
+    link: "https://matplotlib.org/",
+    icon: "/images/techstack-icons/matplotlib.png",
+  },
+  {
+    name: "jupyter",
+    link: "https://jupyter.org/",
+    icon: "/images/techstack-icons/jupyter.png",
+  },
+  
+  {
+    name: "mlconjug3",
+    link: "https://mlconjug3.readthedocs.io/en/latest/usage.html",
+    icon: "/images/techstack-icons/mlconjug.png",
+  },
+  {
+    name: "freedictapi",
+    link: "https://freedictionaryapi.com/",
+    icon: "/images/techstack-icons/freedictapi.png",
+  },
+
   {
     name: "git",
     link: "https://git-scm.com/",
@@ -131,33 +185,6 @@ const techList = [
     name: "gemini",
     link: "https://www.npmjs.com/package/@google/genai",
     icon: "/images/techstack-icons/gemini.webp",
-  },
-
-  //mython modules
-    {
-    name: "scipy",
-    link: "https://scipy.org/",
-    icon: "/images/techstack-icons/scipy.png",
-  },
-    {
-    name: "numpy",
-    link: "https://numpy.org/",
-    icon: "/images/techstack-icons/numpy.png",
-  },
-    {
-    name: "scikit",
-    link: "https://scikit-learn.org/stable/",
-    icon: "/images/techstack-icons/scikit-learn.png",
-  },
-    {
-    name: "matplotlib",
-    link: "https://matplotlib.org/",
-    icon: "/images/techstack-icons/matplotlib.png",
-  },
-      {
-    name: "jupyter",
-    link: "https://jupyter.org/",
-    icon: "/images/techstack-icons/jupyter.png",
   },
   
 ];

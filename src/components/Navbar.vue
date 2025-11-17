@@ -16,6 +16,7 @@ const items = ref([
     items: [
       { label: "Velvet", command: () => router.push("/velvet") },
       { label: "FeelGPT", command: () => router.push("/feelGPT") },
+      { label: "TheTranslator", command: () => router.push("/theTranslator") },
       { label: "Master's thesis", command: () => router.push("/masters-thesis") },
       { label: "Portfolio", command: () => router.push("/portfolio") },
       
