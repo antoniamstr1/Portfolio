@@ -95,6 +95,8 @@ const openPDF = (type) => {
             :data="[
               'python',
               'js',
+              'html',
+              'css',
               'ts',
               'react',
               'vue',
@@ -104,7 +106,10 @@ const openPDF = (type) => {
               'mongodb',
               'c',
               'c++',
+              'c#',
+              'dotnet',
               'git',
+              'docker'
             ]"
             layout="grid-row"
           ></TechStackPanel>

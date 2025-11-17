@@ -28,8 +28,18 @@ const techList = [
   },
   {
     name: "ts",
-    link: "https://www.python.org/",
+    link: "",
     icon: "/images/techstack-icons/ts.png",
+  },
+    {
+    name: "html",
+    link: "",
+    icon: "/images/techstack-icons/html.png",
+  },
+  {
+    name: "css",
+    link: "",
+    icon: "/images/techstack-icons/css.png",
   },
   {
     name: "node",
