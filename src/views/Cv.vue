@@ -58,7 +58,7 @@ const openPDF = (type) => {
               Collaborated in two cross-functional teams on separate projects in
               two divisions using different tech stacks:
               <br /><br /><b>React, JavaScript, Node.js:</b> Contributed to the
-              development of an LLMpowered web application. <br /><br /><b
+              development of an LLM powered web application. <br /><br /><b
                 >Vue, TypeScript, Directus:</b
               >
               Assisted in building and maintaining a content management system
@@ -134,7 +134,7 @@ const openPDF = (type) => {
                 application using React and Node.js that integrates a LLM).
               </p>
               <div class="buttons-container">
-                <Button @click="openPDF('letter')"
+                <Button @click="openPDF('mdu')"
                   >Course Certificate from MDU</Button
                 >
                 <Button label="Open PDF" @click="() => router.push('/FeelGPT')"
