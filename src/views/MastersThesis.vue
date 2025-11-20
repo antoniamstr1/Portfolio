@@ -32,7 +32,7 @@ const features = [
     text: "MINST data set",
     img: "/images/thesis/minst.png",
     textClass: "thesis-text",
-    imageClass: "thesis-image",
+    imageClass: "thesis-minst-image",
   },
 ];
 
@@ -113,8 +113,17 @@ onMounted(() => {
   margin-left: 2rem;
 }
 .thesis-image{
-  width: 100%;
+  width: 80%;
+}
+.thesis-minst-image{
+  width: 60%;
 }
 @media (max-width: 800px) {
+  .thesis-image{
+  width: 100%;
+}
+.thesis-minst-image{
+  width: 100%;
+}
 }
 </style>
