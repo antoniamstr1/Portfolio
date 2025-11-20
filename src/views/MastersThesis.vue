@@ -4,7 +4,37 @@ import Panel from "primevue/panel";
 import Button from "primevue/button";
 import { ref, onMounted } from "vue";
 import TechStackPanel from "../components/TechStackPanel.vue";
-import Fieldset  from "primevue/fieldset";
+
+const features = [
+  {
+    title: "",
+    text: "Image segmentation on pixeled photos",
+    img: "/images/thesis/imagesegm1.png",
+    textClass: "thesis-text",
+    imageClass: "thesis-imagesegm1-image",
+  },
+    {
+    title: "",
+    img: "/images/thesis/imagesegm2.png",
+    textClass: "thesis-text",
+    imageClass: "thesis-imagesegm2-image",
+    nocard: true,
+  },
+    {
+    title: "",
+    text: "IRIS data set",
+    img: "/images/thesis/irisdataset.png",
+    textClass: "thesis-text",
+    imageClass: "thesis-irisdataset-image",
+  },
+      {
+    title: "",
+    text: "MINST data set",
+    img: "/images/thesis/minst.png",
+    textClass: "thesis-text",
+    imageClass: "thesis-minst-image",
+  },
+];
 
 const isMobile = ref(false);
 
@@ -23,48 +53,42 @@ onMounted(() => {
           <template #title>Spectral Data Clustering</template>
           <template #content>
             <p class="m-0">
-This paper explains selected clustering methods with an emphasis on spectral
-clustering. Alongside the 𝑘-means algorithm as a partitioning clustering method, spectral
-clustering methods using the Fiedler vector of the Laplacian matrix and three alternative
-methods are presented: the normalized cut method, the NJW method, and the KVV method.
-In the second part of the paper, the mentioned algorithms are implemented and analyzed
-depending on input parameters and similarity measures. Applications of spectral clustering
-are demonstrated on examples of image segmentation and high-dimensional data from the
-MNIST dataset.            </p>
+              This paper explains selected clustering methods with an emphasis
+              on spectral clustering. Alongside the 𝑘-means algorithm as a
+              partitioning clustering method, spectral clustering methods using
+              the Fiedler vector of the Laplacian matrix and three alternative
+              methods are presented: the normalized cut method, the NJW method,
+              and the KVV method. In the second part of the paper, the mentioned
+              algorithms are implemented and analyzed depending on input
+              parameters and similarity measures. Applications of spectral
+              clustering are demonstrated on examples of image segmentation and
+              high-dimensional data from the MNIST dataset.
+            </p>
           </template>
         </Card>
-        <Fieldset class="left" legend="Content">
-    <p >
-        Work in progress..</p>
-</Fieldset>
-      </div>
-      <!-- <div
-        v-for="(feature, index) in features"
-        :key="index"
-        :class="['container-image-text']"
-      >
-        <div class="gif-wrapper">
+        <div
+          v-for="(feature, index) in features"
+          :key="index"
+          :class="['container-image-text']"
+        >
+          <Card 
+          v-if="!feature.nocard"
+          :class="['card-velvet', feature.textClass]">
+            <template #title>{{ feature.title }}</template>
+            <template #content>
+              <p>{{ feature.text }}</p>
+            </template>
+          </Card>
           <img
-            :src="hovered[index] ? feature.gif : feature.img"
-            @mouseenter="hovered[index] = true"
-            @mouseleave="hovered[index] = false"
+            :src="feature.img"
             :class="['hover-gif', feature.imageClass]"
             loading="lazy"
           />
         </div>
-
-        <Card :class="['card-velvet', feature.textClass]">
-          <template #title>{{ feature.title }}</template>
-          <template #content>
-            <p>{{ feature.text }}</p>
-          </template>
-        </Card>
-      </div> -->
+      </div>
     </Panel>
     <TechStackPanel
-      :data="[
-        'python', 'scipy','numpy','scikit','matplotlib','jupyter'
-      ]"
+      :data="['python', 'scipy', 'numpy', 'scikit', 'matplotlib', 'jupyter']"
       :layout="isMobile ? 'grid-mobile' : 'column'"
     />
 
@@ -78,15 +102,16 @@ MNIST dataset.            </p>
         :style="{ border: 'none' }"
         rel="noopener noreferrer"
       ></Button>
-
-      
     </div>
   </div>
 </template>
 
 <style scoped>
 
+.thesis-text{
+  margin-right: auto;
+  margin-left: 2rem;
+}
 @media (max-width: 800px) {
-
 }
 </style>
