@@ -11,13 +11,13 @@ const features = [
     text: "Image segmentation on pixeled photos",
     img: "/images/thesis/imagesegm1.png",
     textClass: "thesis-text",
-    imageClass: "thesis-imagesegm1-image",
+    imageClass: "thesis-image",
   },
     {
     title: "",
     img: "/images/thesis/imagesegm2.png",
     textClass: "thesis-text",
-    imageClass: "thesis-imagesegm2-image",
+    imageClass: "thesis-image",
     nocard: true,
   },
     {
@@ -25,14 +25,14 @@ const features = [
     text: "IRIS data set",
     img: "/images/thesis/irisdataset.png",
     textClass: "thesis-text",
-    imageClass: "thesis-irisdataset-image",
+    imageClass: "thesis-image",
   },
       {
     title: "",
     text: "MINST data set",
     img: "/images/thesis/minst.png",
     textClass: "thesis-text",
-    imageClass: "thesis-minst-image",
+    imageClass: "thesis-image",
   },
 ];
 
@@ -81,7 +81,7 @@ onMounted(() => {
           </Card>
           <img
             :src="feature.img"
-            :class="['hover-gif', feature.imageClass]"
+            :class="[feature.imageClass]"
             loading="lazy"
           />
         </div>
@@ -111,6 +111,9 @@ onMounted(() => {
 .thesis-text{
   margin-right: auto;
   margin-left: 2rem;
+}
+.thesis-image{
+  width: 100%;
 }
 @media (max-width: 800px) {
 }
